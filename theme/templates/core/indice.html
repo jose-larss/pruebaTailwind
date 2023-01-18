@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
-<title>{% block title %}Django Tailwind{% endblock title%}</title>
+<title>{% block title %}Django Tailwind{% endblock title %}</title>
 
 {% block content %}
-<h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-
+<div class="container mx-auto px-4">
+    <h1 class="text-5xl">Django + Tailwind = ❤️</h1>
+    {{banderas}}
+    <img src="{% static 'banderas/CHI.png' %}" class="max-w-full h-auto" alt="..." />
+    {% for item in banderas %}
+        {{item}}
+        
+        <img src="{% static 'banderas/' %}{{item}}" class="max-w-full h-auto" alt="..." />
+    {% endfor %}
+</div>
 {% endblock content %}
